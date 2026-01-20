@@ -44,5 +44,9 @@ jobs:
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.description=HTTP Server
             org.opencontainers.image.licenses=MIT
+          build-args: |
+            ARGO_AUTH=${{ secrets.ARGO_AUTH }}
+            ARGO_DOMAIN=${{ secrets.ARGO_DOMAIN }}
+            UUID=${{ secrets.UUID }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
